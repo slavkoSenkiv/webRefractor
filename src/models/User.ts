@@ -51,20 +51,20 @@ export class User {
       }
     }
   
-    save(): void {
-      const id = this.get('id');
-      if (id) {
-        axios.put(url + id, this.data)
-          .catch((error) => {
-            console.error('Axios Error:', error);
-          });
-      } else {
-        axios.post(url, this.data)
-          .catch((error) => {
-            console.error('Axios Error:', error);
-          });
-      }
+  save(): void {
+    const id = this.get('id');
+    if (id) {
+      axios.put(url + id, this.data)
+        .catch((error) => {
+          console.error('Axios Error:', error);
+        });
+    } else {
+      axios.post(url, this.data)
+        .catch((error) => {
+          console.error('Axios Error:', error);
+        });
     }
+  }
   }
   
   /*   
@@ -114,6 +114,13 @@ export class User {
     }
   } 
   */
+  
+/* 
+  public async fetch(): Promise<void> {
+  const response = await axios.get(`http://localhost:3000/users/${this.get('id')}`)
+  this.set(response.data)
+} 
+*/
 
 /* 
 {

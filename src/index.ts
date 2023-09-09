@@ -3,9 +3,11 @@ import { User } from "./models/User";
 //it will be added automatically
 //if you add it it will lead to server errors
 //becouse it cant fetch a user id that does not exist yet
-const user = new User({name: 'Slav1', age: 28});
+const user = new User({name: 'Slav2', age: 31});
 user.fetch();
 user.save();
+//setTimeout(()=>user.fetch(), 4000);
+
 
 /* console.log(user);
 console.log(user.get('age'));   
